@@ -47,29 +47,7 @@
 
       <div class="album py-5 bg-light">
         <div class="container">
-
-          <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              task 1 qty 13
-              <span class="badge badge-primary badge-pill pointer">Done</span>
-            </li>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center disabled">
-              task 2 qty 3
-              <span class="badge badge-primary badge-pill pointer">Undo</span>
-            </li>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              task 3 qty 4
-              <span class="badge badge-primary badge-pill pointer">Done</span>
-            </li>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              task 4 qty 5
-              <span class="badge badge-primary badge-pill pointer">Done</span>
-            </li>
-          </ul>
-
+          <ul class="list-group" id="data"></ul>
         </div>
       </div>
 
@@ -84,9 +62,42 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+      var data=[]
+
+      function show_data() {
+        var html = '';
+
+        for(var i=0; i<data.length; i++) {
+          var el = data[i]
+          html += '<li class="list-group-item d-flex justify-content-between align-items-center">'
+          html += '  ' + el.text + ' qty ' + el.qty
+          html += '  <span class="badge badge-primary badge-pill pointer">Done</span>'
+          html += '</li>'
+        }
+
+        $('#data').html(html)
+      }
+
+      function api_error(e) {
+        console.log(e)        
+      }
+
+      $(document).ready(function() {
+        $.get({
+          dataType: 'json',
+          url: '/cgi/api.pl?cmd=getdata',
+          success: function(json) {
+            data=json
+            show_data()
+          },
+          error: api_error
+        });
+      })
+    </script>
   </body>
 </html>

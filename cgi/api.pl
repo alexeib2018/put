@@ -37,22 +37,26 @@ sub get_form_data {
 
 
 sub get_data() {
-	print "[{ 'text': 'task 1',
-	          'qty': 13,
-	          'ref': 11,
-	          'who': 'Kevin' },
-	        { 'text': 'task 2',
-	          'qty': 3,
-	          'ref': 22,
-	          'who': 'Alexei' },
-	        { 'text': 'task 3',
-	          'qty': 4,
-	          'ref': 33,
-	          'who': 'Kevin' },
-	        { 'text': 'task 4',
-	          'qty': 5,
-	          'ref': 44,
-	          'who': 'Alexei' }]";
+	print '[{ "text": "task 1",
+	          "qty": 13,
+	          "ref": 11,
+	          "who": "Kevin",
+	          "done": false },
+	        { "text": "task 2",
+	          "qty": 3,
+	          "ref": 22,
+	          "who": "Alexei",
+	          "done": false },
+	        { "text": "task 3",
+	          "qty": 4,
+	          "ref": 33,
+	          "who": "Kevin",
+	          "done": false },
+	        { "text": "task 4",
+	          "qty": 5,
+	          "ref": 44,
+	          "who": "Alexei",
+	          "done": false }]';
 }
 
 
