@@ -74,7 +74,12 @@
 
         for(var i=0; i<data.length; i++) {
           var el = data[i]
-          html += '<li class="list-group-item d-flex justify-content-between align-items-center">'
+          html += '<li class="list-group-item d-flex justify-content-between align-items-center'
+          if (el.done) {
+            html += ' disabled">'
+          } else {
+            html += '">'
+          }
           html += '  ' + el.text + ' qty ' + el.qty
           if (el.done) {
             html += '  <span class="badge badge-primary badge-pill pointer" onclick="undo(' + i + ')">Undo</span>'
@@ -124,7 +129,7 @@
           dataType: 'json',
           url: '/cgi/api.pl?cmd=getdata',
           success: function(json) {
-            data=json
+            data = json
             show_data()
           },
           error: api_error
