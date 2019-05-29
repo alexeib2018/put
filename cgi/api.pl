@@ -36,12 +36,12 @@ sub get_form_data {
 }
 
 
-sub get_data() {
+sub getdata() {
 	print '[{ "text": "task 1",
 	          "qty": 13,
 	          "ref": 11,
 	          "who": "Kevin",
-	          "done": true },
+	          "done": false },
 	        { "text": "task 2",
 	          "qty": 3,
 	          "ref": 22,
@@ -60,9 +60,27 @@ sub get_data() {
 }
 
 
+sub done {
+	my $ref = shift;
+	print '{"status":"ok"}';
+}
+
+
+sub undo {
+	my $ref = shift;
+	print '{"status":"ok"}';
+}
+
+
 print "Content-Type: application/json\n\n";
 my %form_data = get_form_data();
 
-if ($form_data{'cmd'} eq 'getdata') {
-	get_data();
+if ($form_data{'cmd'} eq 'done') {
+	my $ref = $form_data{'ref'};
+	done($ref);
+} elsif ($form_data{'cmd'} eq 'undo') {
+	my $ref = $form_data{'ref'};
+	undo($ref);
+} elsif ($form_data{'cmd'} eq 'getdata') {
+	getdata();
 }
