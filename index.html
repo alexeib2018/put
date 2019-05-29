@@ -77,9 +77,9 @@
           html += '<li class="list-group-item d-flex justify-content-between align-items-center">'
           html += '  ' + el.text + ' qty ' + el.qty
           if (el.done) {
-            html += '  <span class="badge badge-primary badge-pill pointer">Undo</span>'
+            html += '  <span class="badge badge-primary badge-pill pointer" onclick="undo(' + i + ')">Undo</span>'
           } else {
-            html += '  <span class="badge badge-primary badge-pill pointer">Done</span>'
+            html += '  <span class="badge badge-primary badge-pill pointer" onclick="done(' + i + ')">Done</span>'
           }
           html += '</li>'
         }
@@ -89,6 +89,34 @@
 
       function api_error(e) {
         console.log(e)        
+      }
+
+      function done(i) {
+        $.get({
+          dataType: 'json',
+          url: '/cgi/api.pl?cmd=done&ref=' + data[i].ref,
+          success: function(json) {
+            if (json.status === 'ok') {
+              data[i].done = true
+              show_data()
+            }
+          },
+          error: api_error
+        });
+      }
+
+      function undo(i) {
+        $.get({
+          dataType: 'json',
+          url: '/cgi/api.pl?cmd=undo&ref=' + data[i].ref,
+          success: function(json) {
+            if (json.status === 'ok') {
+              data[i].done = false
+              show_data()
+            }
+          },
+          error: api_error
+        });
       }
 
       $(document).ready(function() {
