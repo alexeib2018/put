@@ -41,7 +41,7 @@ sub get_data() {
 	          "qty": 13,
 	          "ref": 11,
 	          "who": "Kevin",
-	          "done": false },
+	          "done": true },
 	        { "text": "task 2",
 	          "qty": 3,
 	          "ref": 22,
