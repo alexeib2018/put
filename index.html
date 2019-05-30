@@ -28,6 +28,18 @@
       .disabled {
         color: #b3b3b3 !important;
       }
+
+      .table td, .table th {
+        vertical-align: middle;
+      }
+
+      .input-group {
+        width: 220px;
+      }
+
+      .input-group button{
+        margin-left: 5px;
+      }      
     </style>
   </head>
 
@@ -60,8 +72,6 @@
                 <th scope="col">qty</th>
                 <th scope="col">qty_pick</th>
                 <th scope="col">Update PUT</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
               </tr>
             </thead>
             <tbody id="tbody"></tbody>
@@ -104,7 +114,13 @@
           rec += '  <td>' + el.description + '</td>'
           rec += '  <td>' + el.qty + '</td>'
           rec += '  <td>' + el.qty_pick + '</td>'
-          rec += '  <td>UPDATE Put:</td>'
+          rec += '  <td class="input-group input-group-sm">'
+          rec += '    <div class="input-group-prepend">'
+          rec += '      <span class="input-group-text" id="basic-addon1">UPDATE Put:</span>'
+          rec += '    </div>'
+          rec += '    <input type="text" class="form-control" value="10">'
+          rec += '    <button type="button" class="btn btn-primary btn-sm">DONE</button>'
+          rec += '  </td>'
           rec += '</tr>'
 
           html += rec
