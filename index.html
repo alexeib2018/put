@@ -118,8 +118,8 @@
           rec += '    <div class="input-group-prepend">'
           rec += '      <span class="input-group-text" id="basic-addon1">UPDATE Put:</span>'
           rec += '    </div>'
-          rec += '    <input type="text" class="form-control" value="10">'
-          rec += '    <button type="button" class="btn btn-primary btn-sm">DONE</button>'
+          rec += '    <input type="text" class="form-control" onchange="update(this,' + i + ')" value="' + el.qty + '">'
+          rec += '    <button type="button" class="btn btn-primary btn-sm" onclick="update(this,' + i + ')">DONE</button>'
           rec += '  </td>'
           rec += '</tr>'
 
@@ -131,6 +131,21 @@
 
       function api_error(e) {
         console.log(e)        
+      }
+
+      function update(t,i) {
+        var qty = t.value | t.previousElementSibling.value
+        $.get({
+          dataType: 'json',
+          url: '/cgi/api.pl?cmd=update&id=' + data[i].id + '&qty=' + qty,
+          success: function(json) {
+            if (json.status === 'ok') {
+              data[i].qty = qty
+              show_data()
+            }
+          },
+          error: api_error
+        });
       }
 
       function done(i) {
