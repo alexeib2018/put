@@ -148,34 +148,6 @@
         });
       }
 
-      function done(i) {
-        $.get({
-          dataType: 'json',
-          url: '/cgi/api.pl?cmd=done&ref=' + data[i].ref,
-          success: function(json) {
-            if (json.status === 'ok') {
-              data[i].done = true
-              show_data()
-            }
-          },
-          error: api_error
-        });
-      }
-
-      function undo(i) {
-        $.get({
-          dataType: 'json',
-          url: '/cgi/api.pl?cmd=undo&ref=' + data[i].ref,
-          success: function(json) {
-            if (json.status === 'ok') {
-              data[i].done = false
-              show_data()
-            }
-          },
-          error: api_error
-        });
-      }
-
       $(document).ready(function() {
         $.get({
           dataType: 'json',

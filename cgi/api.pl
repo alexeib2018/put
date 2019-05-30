@@ -116,17 +116,6 @@ sub update {
 }
 
 
-sub done {
-	my $ref = shift;
-	print '{"status":"ok"}';
-}
-
-
-sub undo {
-	my $ref = shift;
-	print '{"status":"ok"}';
-}
-
 
 print "Content-Type: application/json\n\n";
 my %form_data = get_form_data();
@@ -135,9 +124,6 @@ if ($form_data{'cmd'} eq 'update') {
 	my $id = $form_data{'id'};
 	my $qty = $form_data{'qty'};
 	update($id, $qty);
-} elsif ($form_data{'cmd'} eq 'undo') {
-	my $ref = $form_data{'ref'};
-	undo($ref);
 } elsif ($form_data{'cmd'} eq 'getdata') {
 	getdata();
 }
