@@ -137,7 +137,10 @@
       }
 
       function update(t,i) {
-        var qty = t.value | t.previousElementSibling.value
+        var qty = parseInt( t.value | t.previousElementSibling.value )
+        if ( !qty ) {
+          qty = data[i].undo
+        }
         $.get({
           dataType: 'json',
           url: '/cgi/api.pl?cmd=update&id=' + data[i].id + '&qty=' + qty,
@@ -162,6 +165,9 @@
           url: '/cgi/api.pl?cmd=getdata',
           success: function(json) {
             data = json
+            for(var i=0; i<data.length; i++) {
+              data[i].undo = data[i].qty
+            }
             show_data()
           },
           error: api_error
