@@ -23,6 +23,23 @@
   <![endif]-->
 
   <script>
+    function update(t) {
+      var el = t
+      if (el.nodeName === "BUTTON") {
+        el = el.previousElementSibling
+      }
+      var name = el.name
+      var value = parseInt(el.value)
+      if (!value) {
+        value = el.defaultValue
+      }
+
+      var target = el.parentElement.previousElementSibling.previousElementSibling
+      target.innerHTML = value
+
+      console.log(name, value)
+    }
+
     $(document).ready(function(){
       $("#nav-mobile").html($("#nav-main").html());
       $("#nav-trigger span").click(function(){
@@ -50,7 +67,7 @@
 <body > 
   <header class="header">
     <div class="brand-logo container text-center">
-      <a href="/dashboard.pl?sdate=2019-05-30"> <img src="/images/logo.png"  /></a>
+      <a href="/dashboard.pl?sdate=2019-05-30"> <img src="/images/logo.png" /></a>
     </div>
 
     <div class="row text-center">
@@ -94,7 +111,9 @@
           <td>bb tri tuna salad</td>
           <td>6</td>
           <td>6</td>
-          <td>UPDATE Put: <input name="so330105|50749|kevin" value="6" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330105|50749|kevin" value="6" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -105,7 +124,9 @@
           <td>bb tri tuna salad</td>
           <td>3</td>
           <td>3</td>
-          <td>UPDATE Put: <input name="so330107|50749|kevin" value="3" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330107|50749|kevin" value="3" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -116,7 +137,9 @@
           <td>bb tri tuna salad</td>
           <td>3</td>
           <td>3</td>
-          <td>UPDATE Put: <input name="so330251|50749|kevin" value="3" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330251|50749|kevin" value="3" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -127,7 +150,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td>0</td>
-          <td>UPDATE Put: <input name="so326517|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326517|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -138,7 +163,9 @@
           <td>bb tri tuna salad</td>
           <td>4</td>
           <td></td>
-          <td>UPDATE Put: <input name="so326490|50749|kevin" value="4" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326490|50749|kevin" value="4" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -149,7 +176,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td>2</td>
-          <td>UPDATE Put: <input name="so326499|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326499|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -160,7 +189,9 @@
           <td>bb tri tuna salad</td>
           <td>4</td>
           <td>4</td>
-          <td>UPDATE Put: <input name="so326504|50749|kevin" value="4" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326504|50749|kevin" value="4" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -171,7 +202,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td></td>
-          <td>UPDATE Put: <input name="so326509|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326509|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -182,7 +215,9 @@
           <td>bb tri tuna salad</td>
           <td>4</td>
           <td>0</td>
-          <td>UPDATE Put: <input name="so326514|50749|kevin" value="4" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326514|50749|kevin" value="4" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -193,7 +228,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td>0</td>
-          <td>UPDATE Put: <input name="so326666|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326666|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -204,7 +241,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td></td>
-          <td>UPDATE Put: <input name="so328535|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so328535|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -215,7 +254,9 @@
           <td>bb tri tuna salad</td>
           <td>4</td>
           <td></td>
-          <td>UPDATE Put: <input name="so330087|50749|kevin" value="4" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330087|50749|kevin" value="4" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -226,7 +267,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td>2</td>
-          <td>UPDATE Put: <input name="so330110|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330110|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -237,7 +280,9 @@
           <td>bb tri tuna salad</td>
           <td>6</td>
           <td></td>
-          <td>UPDATE Put: <input name="so330093|50749|kevin" value="6" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330093|50749|kevin" value="6" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -248,7 +293,9 @@
           <td>bb tri tuna salad</td>
           <td>6</td>
           <td></td>
-          <td>UPDATE Put: <input name="so330096|50749|kevin" value="6" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330096|50749|kevin" value="6" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -259,7 +306,9 @@
           <td>bb tri tuna salad</td>
           <td>3</td>
           <td></td>
-          <td>UPDATE Put: <input name="so330085|50749|kevin" value="3" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330085|50749|kevin" value="3" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -270,7 +319,9 @@
           <td>bb tri tuna salad</td>
           <td>3</td>
           <td>3</td>
-          <td>UPDATE Put: <input name="so330252|50749|kevin" value="3" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330252|50749|kevin" value="3" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -281,7 +332,9 @@
           <td>bb tri tuna salad</td>
           <td>6</td>
           <td></td>
-          <td>UPDATE Put: <input name="so330091|50749|kevin" value="6" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330091|50749|kevin" value="6" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -292,7 +345,9 @@
           <td>bb tri tuna salad</td>
           <td>4</td>
           <td></td>
-          <td>UPDATE Put: <input name="so330098|50749|kevin" value="4" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330098|50749|kevin" value="4" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -303,7 +358,9 @@
           <td>bb tri tuna salad</td>
           <td>3</td>
           <td></td>
-          <td>UPDATE Put: <input name="so330101|50749|kevin" value="3" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330101|50749|kevin" value="3" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -314,7 +371,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td>2</td>
-          <td>UPDATE Put: <input name="so326506|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326506|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -325,7 +384,9 @@
           <td>bb tri tuna salad</td>
           <td>5</td>
           <td>5</td>
-          <td>UPDATE Put: <input name="so330109|50749|kevin" value="5" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so330109|50749|kevin" value="5" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -336,7 +397,9 @@
           <td>bb tri tuna salad</td>
           <td>4</td>
           <td></td>
-          <td>UPDATE Put: <input name="so326488|50749|kevin" value="4" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326488|50749|kevin" value="4" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -347,7 +410,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td></td>
-          <td>UPDATE Put: <input name="so326739|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326739|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr> 
           <td>2018-08-31</td>
@@ -358,7 +423,9 @@
           <td>bb tri tuna salad</td>
           <td>2</td>
           <td>0</td>
-          <td>UPDATE Put: <input name="so326481|50749|kevin" value="2" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326481|50749|kevin" value="2" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
         <tr class="odd"> 
           <td>2018-08-31</td>
@@ -369,7 +436,9 @@
           <td>bb tri tuna salad</td>
           <td>4</td>
           <td></td>
-          <td>UPDATE Put: <input name="so326489|50749|kevin" value="4" size="2">DONE</td>
+          <td>UPDATE Put: <input name="so326489|50749|kevin" value="4" size="2" onchange="update(this)">
+            <button onclick="update(this)">DONE</button>
+          </td>
         </tr>
       </table>
     </div>
