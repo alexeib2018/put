@@ -1,377 +1,389 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <meta charset="utf-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <title>Fresh Grill Pick Portal</title>
-    <link rel="icon" href="/favicon.ico" type="image/ico"/> 
-    <!-- Bootstrap -->
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/cutegrids.css">
-    <link href="/css/style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fresh Grill Pick Portal</title>
+  <link rel="icon" href="/favicon.ico" type="image/ico"/> 
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cutegrids.css">
+  <link href="/css/style.css" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-    <script>
+  <script>
     $(document).ready(function(){
-        $("#nav-mobile").html($("#nav-main").html());
-        $("#nav-trigger span").click(function(){
-            if ($("nav#nav-mobile ul").hasClass("expanded")) {
-                $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
-                $(this).removeClass("open");
-            } else {
-                $("nav#nav-mobile ul").addClass("expanded").slideDown(250);
-                $(this).addClass("open");
-            }
-        });
+      $("#nav-mobile").html($("#nav-main").html());
+      $("#nav-trigger span").click(function(){
+        if ($("nav#nav-mobile ul").hasClass("expanded")) {
+          $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
+          $(this).removeClass("open");
+        } else {
+          $("nav#nav-mobile ul").addClass("expanded").slideDown(250);
+          $(this).addClass("open");
+        }
+      });
     });
-</script>
- <style>
-th, td {
-        padding: 5px;
-            text-align: left;
-}
-.odd {background-color:#ddd}
-</style>
- </head>
+  </script>
+  <style>
+    th, td {
+      padding: 5px;
+      text-align: left;
+    }
+    .odd {
+      background-color: #ddd;
+    }
+  </style>
+</head>
 
 <body > 
-
-   <header class="header">
-        <div class="brand-logo container text-center">
-            <a href="/dashboard.pl?sdate=2019-05-30"> <img src="/images/logo.png"  /></a>
-        </div>
+  <header class="header">
+    <div class="brand-logo container text-center">
+      <a href="/dashboard.pl?sdate=2019-05-30"> <img src="/images/logo.png"  /></a>
+    </div>
 
     <div class="row text-center">
-        <div class="cute-12-tablet">
-<a href="/dashboard.pl?sdate=2019-05-30">Back to Dash Board</a> - Guest - <a href="/logout.pl">Log Out</a> 
-</div>
-</div>
+      <div class="cute-12-tablet">
+        <a href="/dashboard.pl?sdate=2019-05-30">Back to Dash Board</a> - Guest - <a href="/logout.pl">Log Out</a> 
+      </div>
+    </div>
+  </header>
+    
+  <div class="row text-center">
+    <div class="cute-12-tablet">
+      <h1>Current Working Date: 2019-05-30 </h1><br>
+      <form action="" method="get"><input name="sdate" type="date" value="2019-05-30"> <input type="submit" value="Change Pick Date"></form>
+    </div>
+    <div class="cute-12-tablet">
+      <table cellspacing=0 cellpadding=0 border=0 style=" margin-left:auto;margin-right:auto;">
+        <tr>
+          <td colspan=2 align=center><h1>Test Put</h1></td>
+        </tr>
+      </table>
+    </div>
+    <div class="cute-12-tablet">
+      <table border=0 style=" margin-left:auto;margin-right:auto;text-align: left;">
+        <tr>
+          <th>shipment_date</th>
+          <th>sales_order</th>
+          <th>account_name</th>
+          <th>ext_doc</th>
+          <th>item_no</th>
+          <th>description</th>
+          <th>qty</th>
+          <th>qty_pick</th>
+          <th>Update PUT</th>
+        </tr>
+        <tr>
+          <td>2018-08-31</td>
+          <td>so330105</td>
+          <td>canteen - corona</td>
+          <td>ont8 main 931 sat</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>6</td>
+          <td>6</td>
+          <td>UPDATE Put: <input name="so330105|50749|kevin" value="6" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so330107</td>
+          <td>canteen - corona</td>
+          <td>ont8 inbound 931</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>3</td>
+          <td>3</td>
+          <td>UPDATE Put: <input name="so330107|50749|kevin" value="3" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so330251</td>
+          <td>canteen - corona</td>
+          <td>947 gi1ead san dima</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>3</td>
+          <td>3</td>
+          <td>UPDATE Put: <input name="so330251|50749|kevin" value="3" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so326517</td>
+          <td>canteen - vista</td>
+          <td>rt 2 seaworld east s</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td>0</td>
+          <td>UPDATE Put: <input name="so326517|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so326490</td>
+          <td>canteen - vista</td>
+          <td>rt 2 kaiser smart ma</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>4</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so326490|50749|kevin" value="4" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so326499</td>
+          <td>canteen - vista</td>
+          <td>rt 2 cal western fri</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td>2</td>
+          <td>UPDATE Put: <input name="so326499|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so326504</td>
+          <td>canteen - vista</td>
+          <td>rt 2 seaworld perks </td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>4</td>
+          <td>4</td>
+          <td>UPDATE Put: <input name="so326504|50749|kevin" value="4" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so326509</td>
+          <td>canteen - vista</td>
+          <td>rt 2 seaworld perks </td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so326509|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so326514</td>
+          <td>canteen - vista</td>
+          <td>rt 2 seaworld east f</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>4</td>
+          <td>0</td>
+          <td>UPDATE Put: <input name="so326514|50749|kevin" value="4" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so326666</td>
+          <td>canteen - vista</td>
+          <td>rt 4 dexcom 4 friday</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td>0</td>
+          <td>UPDATE Put: <input name="so326666|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so328535</td>
+          <td>canteen - vista</td>
+          <td>rt 8 costco santee</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so328535|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so330087</td>
+          <td>canteen-north hollywood</td>
+          <td>costco azusa sat</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>4</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so330087|50749|kevin" value="4" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so330110</td>
+          <td>canteen - corona</td>
+          <td>ont8 west 931</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td>2</td>
+          <td>UPDATE Put: <input name="so330110|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so330093</td>
+          <td>canteen-north hollywood</td>
+          <td>lockheed636 sat</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>6</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so330093|50749|kevin" value="6" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so330096</td>
+          <td>canteen-north hollywood</td>
+          <td>lockheed602</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>6</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so330096|50749|kevin" value="6" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so330085</td>
+          <td>canteen-north hollywood</td>
+          <td>auto club burbank</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>3</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so330085|50749|kevin" value="3" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so330252</td>
+          <td>canteen - corona</td>
+          <td>947 gilread laverne</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>3</td>
+          <td>3</td>
+          <td>UPDATE Put: <input name="so330252|50749|kevin" value="3" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so330091</td>
+          <td>canteen-north hollywood</td>
+          <td>lockheed 611 sat</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>6</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so330091|50749|kevin" value="6" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so330098</td>
+          <td>canteen-north hollywood</td>
+          <td>costco sherma way</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>4</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so330098|50749|kevin" value="4" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so330101</td>
+          <td>canteen-north hollywood</td>
+          <td>antelope valley hosp</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>3</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so330101|50749|kevin" value="3" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so326506</td>
+          <td>canteen - vista</td>
+          <td>rt 2 seaworld perks </td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td>2</td>
+          <td>UPDATE Put: <input name="so326506|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so330109</td>
+          <td>canteen - corona</td>
+          <td>ont6 seasonal931 sat</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>5</td>
+          <td>5</td>
+          <td>UPDATE Put: <input name="so330109|50749|kevin" value="5" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so326488</td>
+          <td>canteen - vista</td>
+          <td>rt 2 kaiser smart ma</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>4</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so326488|50749|kevin" value="4" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so326739</td>
+          <td>canteen - vista</td>
+          <td>rt 7 illumina #2 fri</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so326739|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr> 
+          <td>2018-08-31</td>
+          <td>so326481</td>
+          <td>canteen - vista</td>
+          <td>rt 2 zoo front satur</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>2</td>
+          <td>0</td>
+          <td>UPDATE Put: <input name="so326481|50749|kevin" value="2" size="2">DONE</td>
+        </tr>
+        <tr class="odd"> 
+          <td>2018-08-31</td>
+          <td>so326489</td>
+          <td>canteen - vista</td>
+          <td>rt 2 kaiser smart ma</td>
+          <td>50749</td>
+          <td>bb tri tuna salad</td>
+          <td>4</td>
+          <td></td>
+          <td>UPDATE Put: <input name="so326489|50749|kevin" value="4" size="2">DONE</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+    
+  <footer class="text-center">
+    <div class="row">
+      <p class="copyright">© Copyright Mreshgrillfoods.com 2017</p>
+    </div>
+  </footer>
 
-    </header>
-    <div class="row text-center">
-        <div class="cute-12-tablet">
-         <h1>Current Working Date: 2019-05-30 </h1><br>
-<form action="" method="get"><input name="sdate" type="date" value="2019-05-30"> <input type="submit" value="Change Pick Date"></form>
-</div>
-<div class="cute-12-tablet ">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<table cellspacing=0 cellpadding=0 border=0 style=" margin-left:auto;margin-right:auto;">
-<tr><td colspan=2 align=center><h1>Test Put </h1></td></tr>
-           </table>
-</div>
-<div class="cute-12-tablet ">
-<table  border=0 style=" margin-left:auto;margin-right:auto;text-align: left;">
-<tr><th>shipment_date</th><th>sales_order</th><th>account_name</th><th>ext_doc</th><th>item_no</th><th>description</th><th>qty</th><th>qty_pick</th><th>Update PUT</th></tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so330105</td>
-<td>canteen - corona</td>
-<td>ont8 main 931 sat</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>6</td>
-<td>6</td>
-<td>UPDATE Put: <input name="so330105|50749|kevin" value="6" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so330107</td>
-<td>canteen - corona</td>
-<td>ont8 inbound 931</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>3</td>
-<td>3</td>
-<td>UPDATE Put: <input name="so330107|50749|kevin" value="3" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so330251</td>
-<td>canteen - corona</td>
-<td>947 gi1ead san dima</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>3</td>
-<td>3</td>
-<td>UPDATE Put: <input name="so330251|50749|kevin" value="3" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so326517</td>
-<td>canteen - vista</td>
-<td>rt 2 seaworld east s</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td>0</td>
-<td>UPDATE Put: <input name="so326517|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so326490</td>
-<td>canteen - vista</td>
-<td>rt 2 kaiser smart ma</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>4</td>
-<td></td>
-<td>UPDATE Put: <input name="so326490|50749|kevin" value="4" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so326499</td>
-<td>canteen - vista</td>
-<td>rt 2 cal western fri</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td>2</td>
-<td>UPDATE Put: <input name="so326499|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so326504</td>
-<td>canteen - vista</td>
-<td>rt 2 seaworld perks </td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>4</td>
-<td>4</td>
-<td>UPDATE Put: <input name="so326504|50749|kevin" value="4" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so326509</td>
-<td>canteen - vista</td>
-<td>rt 2 seaworld perks </td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td></td>
-<td>UPDATE Put: <input name="so326509|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so326514</td>
-<td>canteen - vista</td>
-<td>rt 2 seaworld east f</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>4</td>
-<td>0</td>
-<td>UPDATE Put: <input name="so326514|50749|kevin" value="4" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so326666</td>
-<td>canteen - vista</td>
-<td>rt 4 dexcom 4 friday</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td>0</td>
-<td>UPDATE Put: <input name="so326666|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so328535</td>
-<td>canteen - vista</td>
-<td>rt 8 costco santee</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td></td>
-<td>UPDATE Put: <input name="so328535|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so330087</td>
-<td>canteen-north hollywood</td>
-<td>costco azusa sat</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>4</td>
-<td></td>
-<td>UPDATE Put: <input name="so330087|50749|kevin" value="4" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so330110</td>
-<td>canteen - corona</td>
-<td>ont8 west 931</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td>2</td>
-<td>UPDATE Put: <input name="so330110|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so330093</td>
-<td>canteen-north hollywood</td>
-<td>lockheed636 sat</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>6</td>
-<td></td>
-<td>UPDATE Put: <input name="so330093|50749|kevin" value="6" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so330096</td>
-<td>canteen-north hollywood</td>
-<td>lockheed602</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>6</td>
-<td></td>
-<td>UPDATE Put: <input name="so330096|50749|kevin" value="6" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so330085</td>
-<td>canteen-north hollywood</td>
-<td>auto club burbank</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>3</td>
-<td></td>
-<td>UPDATE Put: <input name="so330085|50749|kevin" value="3" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so330252</td>
-<td>canteen - corona</td>
-<td>947 gilread laverne</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>3</td>
-<td>3</td>
-<td>UPDATE Put: <input name="so330252|50749|kevin" value="3" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so330091</td>
-<td>canteen-north hollywood</td>
-<td>lockheed 611 sat</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>6</td>
-<td></td>
-<td>UPDATE Put: <input name="so330091|50749|kevin" value="6" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so330098</td>
-<td>canteen-north hollywood</td>
-<td>costco sherma way</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>4</td>
-<td></td>
-<td>UPDATE Put: <input name="so330098|50749|kevin" value="4" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so330101</td>
-<td>canteen-north hollywood</td>
-<td>antelope valley hosp</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>3</td>
-<td></td>
-<td>UPDATE Put: <input name="so330101|50749|kevin" value="3" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so326506</td>
-<td>canteen - vista</td>
-<td>rt 2 seaworld perks </td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td>2</td>
-<td>UPDATE Put: <input name="so326506|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so330109</td>
-<td>canteen - corona</td>
-<td>ont6 seasonal931 sat</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>5</td>
-<td>5</td>
-<td>UPDATE Put: <input name="so330109|50749|kevin" value="5" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so326488</td>
-<td>canteen - vista</td>
-<td>rt 2 kaiser smart ma</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>4</td>
-<td></td>
-<td>UPDATE Put: <input name="so326488|50749|kevin" value="4" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so326739</td>
-<td>canteen - vista</td>
-<td>rt 7 illumina #2 fri</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td></td>
-<td>UPDATE Put: <input name="so326739|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr > 
-<td>2018-08-31</td>
-<td>so326481</td>
-<td>canteen - vista</td>
-<td>rt 2 zoo front satur</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>2</td>
-<td>0</td>
-<td>UPDATE Put: <input name="so326481|50749|kevin" value="2" size="2">DONE</td>
-</tr>
-<tr  class="odd" > 
-<td>2018-08-31</td>
-<td>so326489</td>
-<td>canteen - vista</td>
-<td>rt 2 kaiser smart ma</td>
-<td>50749</td>
-<td>bb tri tuna salad</td>
-<td>4</td>
-<td></td>
-<td>UPDATE Put: <input name="so326489|50749|kevin" value="4" size="2">DONE</td>
-</tr>
-</table>";
-</div>
-
-</div>
-    <footer class="text-center">
-        <div class="row">
-        <p class="copyright">© Copyright Mreshgrillfoods.com 2017</p>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-            </body>
-             </html>
-
+</body>
+</html>
