@@ -29,15 +29,23 @@
         el = el.previousElementSibling
       }
       var name = el.name
-      var value = parseInt(el.value)
-      if (!value) {
-        value = el.defaultValue
+      var qty = parseInt(el.value)
+      if (!qty) {
+        qty = el.defaultValue
       }
 
       var target = el.parentElement.previousElementSibling.previousElementSibling
-      target.innerHTML = value
 
-      console.log(name, value)
+      var url = '/cgi/api.pl?cmd=update&id=' + name + '&qty=' + qty 
+      $.get({
+        dataType: 'json',
+        url: url,
+        success: function(json) {
+          if (json.status === 'ok') {
+            target.innerHTML = qty
+          }
+        }
+      });
     }
 
     $(document).ready(function(){
@@ -450,7 +458,7 @@
     </div>
   </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
