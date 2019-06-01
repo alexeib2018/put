@@ -34,7 +34,7 @@
         qty = el.defaultValue
       }
 
-      var target = el.parentElement.previousElementSibling.previousElementSibling
+      var target = el.parentElement.previousElementSibling
 
       var url = '/cgi/api.pl?cmd=update&id=' + name + '&qty=' + qty 
       $.get({
