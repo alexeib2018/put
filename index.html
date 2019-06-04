@@ -139,14 +139,14 @@
       function update(t,i) {
         var qty = parseInt( t.value | t.previousElementSibling.value )
         if ( !qty ) {
-          qty = data[i].undo
+          qty = data[i].qty
         }
         $.get({
           dataType: 'json',
           url: '/cgi/api.pl?cmd=update&id=' + data[i].id + '&qty=' + qty,
           success: function(json) {
             if (json.status === 'ok') {
-              data[i].qty = qty
+              data[i].qty_pick = qty
               show_data()
             }
           },
@@ -165,9 +165,6 @@
           url: '/cgi/api.pl?cmd=getdata',
           success: function(json) {
             data = json
-            for(var i=0; i<data.length; i++) {
-              data[i].undo = data[i].qty
-            }
             show_data()
           },
           error: api_error
