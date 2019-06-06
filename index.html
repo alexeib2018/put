@@ -138,7 +138,7 @@
 
       function update(t,i) {
         var qty = parseInt( t.value | t.previousElementSibling.value )
-        if ( !qty ) {
+        if ( !qty || qty==data[i].qty) {
           qty = ''
         }
         $.get({

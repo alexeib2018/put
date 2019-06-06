@@ -30,7 +30,7 @@
       }
       var name = el.name
       var qty = parseInt(el.value)
-      if (!qty) {
+      if (!qty || qty==el.parentElement.previousElementSibling.previousElementSibling.innerText) {
         qty = ''
       }
 
