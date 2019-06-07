@@ -23,7 +23,17 @@
   <![endif]-->
 
   <script>
+    var inprogress = false
+
     function update(t) {
+      if (inprogress) {
+        return
+      }
+      inprogress = true
+      setTimeout( function() {
+        inprogress = false
+      }, 500)
+
       var el = t
       if (el.nodeName === "BUTTON") {
         el = el.previousElementSibling

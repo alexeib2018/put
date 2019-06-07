@@ -136,7 +136,17 @@
         console.log(e)        
       }
 
+      var inprogress = false
+
       function update(t,i) {
+        if (inprogress) {
+          return
+        }
+        inprogress = true
+        setTimeout( function() {
+          inprogress = false
+        }, 500)
+
         var qty = parseInt( t.value | t.previousElementSibling.value )
         if (''+qty==='NaN' || qty<0) {
           qty = ''
