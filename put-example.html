@@ -30,7 +30,7 @@
       }
       var name = el.name
       var qty = parseInt(el.value)
-      if (!qty) {
+      if (''+qty==='NaN' || qty<0) {
         qty = ''
       }
 
